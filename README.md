@@ -1,31 +1,31 @@
 **https://discord.com/invite/CJMgkBZ284**
 # 🌌 Creayun - The Ultimate Gaming & Proxy Hub
 
-# Welcome to Creayun, the ultimate website for gaming, apps, and browsing with freedom! 🚀
+## Welcome to Creayun, the ultimate website for gaming, apps, and browsing with freedom! 🚀
 
 # 🔥 Why Visit Creayun?
 
-# 🎮 Unblocked Games – Play Minecraft (Eaglercraft), Roblox, and more!
+- 🎮 Unblocked Games – Play Minecraft (Eaglercraft), Roblox, and more!
 
-# 🔧 Hacked Clients & Cheats – Access Eaglercraft Hacked Clients and Shell Shockers Hacks.
+- 🔧 Hacked Clients & Cheats – Access Eaglercraft Hacked Clients and Shell Shockers Hacks.
 
-# 🛡️ Proxy & Apps – Bypass restrictions and explore powerful tools.
+- 🛡️ Proxy & Apps – Bypass restrictions and explore powerful tools.
 
-# 📜 Easy Navigation – Smooth UI with quick access to all sections.
+- 📜 Easy Navigation – Smooth UI with quick access to all sections.
 
-# 🎭 100% Free & Anonymous – No sign-ups, no tracking, just pure fun!
+- 🎭 100% Free & Anonymous – No sign-ups, no tracking, just pure fun!
 
-# 🌠 Features
+# 🌠 Features:
 
-✅ **One-Click Access – Instant redirection to games, tools, and apps.**
-✅ **Regular Updates – More games and features coming soon!**
-✅ **Discord Community – Join us here for updates & discussions.**
+- [x] **One-Click Access – Instant redirection to games, tools, and apps.**
+- [x] **Regular Updates – More games and features coming soon!**
+- [x] **Discord Community – Join us here for updates & discussions.**
 
 # 🚀 Explore Now!
 
-# 🔗 Visit Creayun: https://hipelol1.github.io/
+## 🔗 Visit Creayun: https://hipelol1.github.io/
 
-# Don't forget to bookmark Creayun and share it with your friends! 🚀🌌
+## Don't forget to bookmark Creayun and share it with your friends! 🚀🌌
 
 Please dont hate on me by the way :]
 
