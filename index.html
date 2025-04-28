@@ -7,15 +7,41 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <title>Creayun</title>
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .logo {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .logo img {
+      width: 100px;
+      height: auto;
+      transition: all 0.3s ease;
+    }
+
+    .logo img:hover {
+      filter: drop-shadow(0 0 10px #00f);
+      transform: scale(1.05);
+    }
+
     .navbar {
       position: fixed;
-      top: 0;
+      top: 80px;
       right: 0;
       width: auto;
       background: rgba(0, 0, 0, 0.5);
       padding: 10px;
       border-radius: 0 0 0 10px;
     }
+
     .navbar ul {
       list-style: none;
       margin: 0;
@@ -23,9 +49,11 @@
       display: flex;
       flex-direction: row;
     }
+
     .navbar li {
       margin: 0 10px;
     }
+
     .navbar a, .corner-button {
       display: inline-block;
       padding: 10px 15px;
@@ -38,6 +66,7 @@
 
     .content {
       display: block;
+      padding-top: 140px;
     }
 
     #discord-widget {
@@ -48,6 +77,11 @@
   </style>
 </head>
 <body>
+
+  <div class="logo">
+    <img src="favicon.ico" alt="Creayun Logo">
+  </div>
+
   <header>
     <nav class="navbar">
       <ul>
@@ -76,7 +110,6 @@
     </p>
   </div>
 
-  <!-- Discord Widget will be shown here when clicked -->
   <div id="discord-widget">
     <widgetbot
       server="1210078870326345738"
@@ -91,12 +124,10 @@
   <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
   <script>
     function showDiscord() {
-      // Hide the main content
       document.querySelector('.content').style.display = 'none';
-      
-      // Show the Discord widget
       document.getElementById('discord-widget').style.display = 'block';
     }
   </script>
+
 </body>
 </html>
