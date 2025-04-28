@@ -10,6 +10,7 @@
     html, body {
       margin: 0;
       padding: 0;
+      width: 100%;
       height: 100%;
       overflow-x: hidden;
     }
@@ -51,16 +52,19 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
       border: none;
       display: none;
       z-index: 9999;
+      background: white;
     }
     .close-button {
       position: fixed;
-      top: 10px;
-      left: 10px;
+      top: 15px;
+      left: 15px;
       z-index: 10000;
       display: none;
       background: rgba(255, 0, 0, 0.8);
@@ -69,7 +73,7 @@
       padding: 10px 15px;
       border-radius: 5px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 18px;
     }
   </style>
 </head>
@@ -99,21 +103,17 @@
       <a href="https://discord.com/invite/CJMgkBZ284" class="game-button">Discord</a>
     </p>
 
-    <!-- New Discord Load Button -->
     <button class="discord-load-button" onclick="openDiscordPage()">Open Discord Page</button>
   </div>
 
-  <!-- Fullscreen iframe -->
   <iframe src="about:blank" class="contentFrame" onload="this.contentWindow.focus()"></iframe>
 
-  <!-- Close Button -->
   <button class="close-button" onclick="closeIframe()">❌ Close</button>
 
   <a class="corner-button" id="credits-button" onclick="alert('Credits go here!')">Credits</a>
 
   <script src="script.js"></script>
 
-  <!-- Script to Open and Close the Fullscreen Discord Page -->
   <script>
     function openDiscordPage() {
       const iframe = document.querySelector('.contentFrame');
@@ -121,15 +121,16 @@
       iframe.src = 'https://hipelol1.github.io/discord.html';
       iframe.style.display = 'block';
       closeButton.style.display = 'block';
-      document.body.style.overflow = 'hidden'; // Lock page scroll when iframe is open
+      document.body.style.overflow = 'hidden';
     }
+
     function closeIframe() {
       const iframe = document.querySelector('.contentFrame');
       const closeButton = document.querySelector('.close-button');
       iframe.style.display = 'none';
-      iframe.src = 'about:blank'; // Reset iframe to blank
+      iframe.src = 'about:blank';
       closeButton.style.display = 'none';
-      document.body.style.overflow = 'auto'; // Re-enable page scroll when iframe is closed
+      document.body.style.overflow = 'auto';
     }
   </script>
 </body>
