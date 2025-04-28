@@ -35,12 +35,10 @@
       border-radius: 5px;
       cursor: pointer;
     }
-    /* For the iframe when the Discord page is shown */
+
+    /* Hide iframe by default */
     .contentFrame {
-      width: 100%;
-      height: 100vh; /* Take up full viewport height */
-      border: none;
-      display: none; /* Initially hidden */
+      display: none;
     }
   </style>
 </head>
@@ -66,28 +64,17 @@
     <p>By Laith!</p>
     <p>⚠️ This is in its BETA Stage ⚠️</p>
     <p>Please Report Bugs/Issues/Suggestions to the Discord server: 
-      <a href="https://hipelol1.github.io/discord.html" onclick="loadDiscordPage(event)" class="game-button">
-        Go to Discord Page
-      </a>
-      <a href="https://discord.com/invite/CJMgkBZ284" target="_blank" class="game-button">
-        Discord Invite
-      </a>
+      <a href="https://discord.com/invite/CJMgkBZ284" class="game-button">Discord</a>
+    </p>
+    <p>
+      <a href="discord.html" class="game-button">Go to Discord Page</a>
     </p>
   </div>
 
-  <!-- Hidden iframe to load the discord.html page -->
-  <iframe id="discordFrame" src="about:blank" class="contentFrame" onload="this.contentWindow.focus()"></iframe>
-
+  <!-- Remove iframe content to prevent it from showing -->
+  <iframe src="about:blank" class="contentFrame" onload="this.contentWindow.focus()"></iframe>
+  
   <a class="corner-button" id="credits-button" onclick="alert('Credits go here!')">Credits</a>
-
-  <script>
-    // Function to load the discord.html page inside the iframe
-    function loadDiscordPage(event) {
-      event.preventDefault(); // Prevent the default link action
-      document.getElementById("discordFrame").style.display = "block"; // Show the iframe
-      document.getElementById("discordFrame").src = "discord.html"; // Set the iframe source to discord.html
-    }
-  </script>
 
   <script src="script.js"></script>
 </body>
