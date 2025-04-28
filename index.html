@@ -15,8 +15,8 @@
       color: white;
       font-family: Arial, sans-serif;
       overflow: hidden;
-      background: url('minecraft_background.jpg') no-repeat center center fixed; /* Minecraft background */
-      background-size: cover; /* Ensures the background covers the entire screen */
+      background: url('minecraft_background.jpg') no-repeat center center fixed;
+      background-size: cover;
     }
 
     .navbar {
@@ -81,6 +81,19 @@
       cursor: pointer;
       font-size: 18px;
     }
+
+    /* Style for bottom buttons */
+    .discord-load-button, .corner-button {
+      display: inline-block;
+      padding: 10px 15px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+      font-size: 16px;
+    }
   </style>
 </head>
 
@@ -120,10 +133,14 @@
 
   <script>
     function openDiscord() {
+      // Open Discord page in iframe
       document.getElementById('discordFrame').src = 'https://hipelol1.github.io/discord.html';
       document.getElementById('discordFrame').style.display = 'block';
       document.getElementById('closeButton').style.display = 'block';
       document.getElementById('mainContent').style.display = 'none';
+      
+      // Redirect to Discord invite link
+      window.open('https://discord.com/invite/CJMgkBZ284', '_blank');
     }
 
     function closeDiscord() {
