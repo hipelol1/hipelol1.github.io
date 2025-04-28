@@ -15,6 +15,7 @@
       background: rgba(0, 0, 0, 0.5);
       padding: 10px;
       border-radius: 0 0 0 10px;
+      z-index: 10;
     }
     .navbar ul {
       list-style: none;
@@ -37,13 +38,28 @@
       margin: 5px 0;
     }
     .contentFrame {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       border: none;
-      position: absolute;
-      left: 0;
-      top: 0;
       display: none;
+      z-index: 9999; /* makes sure iframe is on top of everything */
+    }
+    .close-button {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 10000;
+      display: none;
+      background: rgba(255, 0, 0, 0.8);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
     }
   </style>
 </head>
@@ -77,18 +93,31 @@
     <button class="discord-load-button" onclick="openDiscordPage()">Open Discord Page</button>
   </div>
 
+  <!-- Fullscreen iframe -->
   <iframe src="about:blank" class="contentFrame" onload="this.contentWindow.focus()"></iframe>
+
+  <!-- Close Button -->
+  <button class="close-button" onclick="closeIframe()">❌ Close</button>
 
   <a class="corner-button" id="credits-button" onclick="alert('Credits go here!')">Credits</a>
 
   <script src="script.js"></script>
 
-  <!-- New Script to Open Discord Page -->
+  <!-- Script to Open and Close the Fullscreen Discord Page -->
   <script>
     function openDiscordPage() {
       const iframe = document.querySelector('.contentFrame');
+      const closeButton = document.querySelector('.close-button');
       iframe.src = 'https://hipelol1.github.io/discord.html';
       iframe.style.display = 'block';
+      closeButton.style.display = 'block';
+    }
+    function closeIframe() {
+      const iframe = document.querySelector('.contentFrame');
+      const closeButton = document.querySelector('.close-button');
+      iframe.style.display = 'none';
+      iframe.src = 'about:blank'; // Reset iframe to blank
+      closeButton.style.display = 'none';
     }
   </script>
 </body>
