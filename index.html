@@ -36,8 +36,13 @@
       cursor: pointer;
     }
 
-    /* Hide iframe by default */
-    .contentFrame {
+    .content {
+      display: block;
+    }
+
+    #discord-widget {
+      width: 100vw;
+      height: 100vh;
       display: none;
     }
   </style>
@@ -67,15 +72,31 @@
       <a href="https://discord.com/invite/CJMgkBZ284" class="game-button">Discord</a>
     </p>
     <p>
-      <a href="discord.html" class="game-button">Go to Discord Page</a>
+      <a href="javascript:void(0);" class="game-button" onclick="showDiscord()">Go to Discord Page</a>
     </p>
   </div>
 
-  <!-- Remove iframe content to prevent it from showing -->
-  <iframe src="about:blank" class="contentFrame" onload="this.contentWindow.focus()"></iframe>
-  
+  <!-- Discord Widget will be shown here when clicked -->
+  <div id="discord-widget">
+    <widgetbot
+      server="1210078870326345738"
+      channel="1359683653109547149"
+      width="100%"
+      height="100%"
+    ></widgetbot>
+  </div>
+
   <a class="corner-button" id="credits-button" onclick="alert('Credits go here!')">Credits</a>
 
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+  <script>
+    function showDiscord() {
+      // Hide the main content
+      document.querySelector('.content').style.display = 'none';
+      
+      // Show the Discord widget
+      document.getElementById('discord-widget').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
