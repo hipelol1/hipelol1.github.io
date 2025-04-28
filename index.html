@@ -12,10 +12,10 @@
       padding: 0;
       width: 100%;
       height: 100%;
-      background: black; /* or your galaxy background */
       color: white;
       font-family: Arial, sans-serif;
       overflow: hidden;
+      background: none;
     }
 
     .navbar {
@@ -40,7 +40,7 @@
       margin: 0 10px;
     }
 
-    .navbar a, .corner-button, .discord-load-button {
+    .navbar a {
       display: inline-block;
       padding: 10px 15px;
       background: rgba(255, 255, 255, 0.2);
@@ -57,10 +57,10 @@
 
     #discordFrame {
       position: fixed;
-      top: 60px;
+      top: 0;
       left: 0;
       width: 100%;
-      height: calc(100% - 60px);
+      height: 100%;
       border: none;
       display: none;
       z-index: 900;
@@ -89,13 +89,13 @@
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="https://discord.com/invite/CJMgkBZ284" target="_blank">Discord</a></li>
-        <li><a data-href="/games">Games</a></li>
-        <li><a data-href="/apps">Apps</a></li>
-        <li><a data-href="/proxy">Prxy</a></li>
-        <li><a data-href="/tools">Tools</a></li>
-        <li><a data-href="/misc">Download Games / Files</a></li>
+        <li><a href="/games">Games</a></li>
+        <li><a href="/apps">Apps</a></li>
+        <li><a href="/proxy">Prxy</a></li>
+        <li><a href="/tools">Tools</a></li>
+        <li><a href="/misc">Download Games / Files</a></li>
         <li><a href="https://github.com/hipelol1/hipelol1.github.io/">Github</a></li>
-        <li><a data-href="/settings">Settings</a></li>
+        <li><a href="/settings">Settings</a></li>
       </ul>
     </nav>
   </header>
@@ -109,7 +109,7 @@
     <p>By Laith!</p>
     <p>⚠️ This is in its BETA Stage ⚠️</p>
     <p>Report bugs or suggestions here: 
-      <a href="https://discord.com/invite/CJMgkBZ284" class="game-button" target="_blank">Discord</a>
+      <a href="https://discord.com/invite/CJMgkBZ284" target="_blank">Discord</a>
     </p>
 
     <button class="discord-load-button" onclick="openDiscord()">Open Discord Page</button>
