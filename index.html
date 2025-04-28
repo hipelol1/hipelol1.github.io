@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creayun</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  
+  <title>Creayun</title>
   <style>
     html, body {
       margin: 0;
@@ -35,14 +35,13 @@
       padding: 0;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
     }
 
     .navbar li {
-      margin: 5px;
+      margin: 0 10px;
     }
 
-    .navbar a, .button-link, .corner-button, .discord-load-button {
+    .navbar a, .corner-button, .discord-load-button {
       display: inline-block;
       padding: 10px 15px;
       background: rgba(255, 255, 255, 0.2);
@@ -50,17 +49,10 @@
       text-decoration: none;
       border-radius: 5px;
       cursor: pointer;
-      font-size: 16px;
-      margin: 5px;
-      transition: background 0.3s;
-    }
-
-    .navbar a:hover, .button-link:hover, .corner-button:hover, .discord-load-button:hover {
-      background: rgba(255, 255, 255, 0.4);
     }
 
     .content {
-      margin-top: 100px;
+      margin-top: 80px;
       text-align: center;
     }
 
@@ -98,13 +90,13 @@
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="https://discord.com/invite/CJMgkBZ284" target="_blank">Discord</a></li>
-        <li><a href="/games">Games</a></li>
-        <li><a href="/apps">Apps</a></li>
-        <li><a href="/proxy">Proxy</a></li>
-        <li><a href="/tools">Tools</a></li>
-        <li><a href="/misc">Downloads</a></li>
-        <li><a href="https://github.com/hipelol1/hipelol1.github.io/" target="_blank">GitHub</a></li>
-        <li><a href="/settings">Settings</a></li>
+        <li><a data-href="/games">Games</a></li>
+        <li><a data-href="/apps">Apps</a></li>
+        <li><a data-href="/proxy">Proxy</a></li>
+        <li><a data-href="/tools">Tools</a></li>
+        <li><a data-href="/misc">Download Games / Files</a></li>
+        <li><a href="https://github.com/hipelol1/hipelol1.github.io/" target="_blank">Github</a></li>
+        <li><a data-href="/settings">Settings</a></li>
       </ul>
     </nav>
   </header>
@@ -118,7 +110,7 @@
     <p>By Laith!</p>
     <p>⚠️ This is in its BETA Stage ⚠️</p>
     <p>Report bugs or suggestions here: 
-      <a href="https://discord.com/invite/CJMgkBZ284" class="button-link" target="_blank">Join Discord</a>
+      <a href="https://discord.com/invite/CJMgkBZ284" class="discord-load-button" target="_blank">Discord</a>
     </p>
 
     <button class="discord-load-button" onclick="openDiscord()">Open Discord Page</button>
