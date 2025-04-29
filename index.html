@@ -13,33 +13,19 @@
       background-color: black;
       color: white;
       font-family: Arial, sans-serif;
-    }
-
-    .logo {
-      text-align: center;
-      margin-top: 20px;
-      margin-bottom: 10px;
-    }
-
-    .logo img {
-      width: 100px;
-      height: auto;
-      transition: all 0.3s ease;
-    }
-
-    .logo img:hover {
-      filter: drop-shadow(0 0 10px #00f);
-      transform: scale(1.05);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     .navbar {
       position: fixed;
-      top: 80px;
-      right: 0;
-      width: auto;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 10px;
-      border-radius: 0 0 0 10px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 10px 0;
+      z-index: 1000;
     }
 
     .navbar ul {
@@ -47,11 +33,12 @@
       margin: 0;
       padding: 0;
       display: flex;
-      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     .navbar li {
-      margin: 0 10px;
+      margin: 0 15px;
     }
 
     .navbar a, .corner-button {
@@ -61,12 +48,18 @@
       color: white;
       text-decoration: none;
       border-radius: 5px;
-      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .navbar a:hover, .corner-button:hover {
+      background: rgba(255, 255, 255, 0.4);
     }
 
     .content {
+      flex: 1;
       display: block;
-      padding-top: 140px;
+      padding-top: 80px;
+      text-align: center;
     }
 
     #discord-widget {
@@ -74,13 +67,18 @@
       height: 100vh;
       display: none;
     }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.8);
+      margin-top: auto;
+    }
   </style>
 </head>
 <body>
-
-  <div class="logo">
-    <img src="favicon.ico" alt="Creayun Logo">
-  </div>
 
   <header>
     <nav class="navbar">
@@ -119,7 +117,12 @@
     ></widgetbot>
   </div>
 
-  <a class="corner-button" id="credits-button" onclick="alert('Credits go here!')">Credits</a>
+  <footer class="footer">
+    <div class="logo">
+      <img src="favicon.ico" alt="Creayun Logo" style="width: 50px; height: auto;">
+    </div>
+    <a class="corner-button" id="credits-button" onclick="alert('Credits go here!')">Credits</a>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
   <script>
