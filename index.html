@@ -67,11 +67,12 @@
 
     .content-box {
       background: rgba(255, 255, 255, 0.05);
-      padding: 20px;
+      padding: 15px;
       border-radius: 10px;
-      max-width: 400px;
+      max-width: 250px;
       text-align: center;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      font-size: 14px;
     }
 
     #discord-widget {
@@ -104,6 +105,23 @@
       filter: drop-shadow(0 0 8px #00f);
       transform: scale(1.1);
     }
+
+    .game-button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: rgba(0, 0, 255, 0.4);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s;
+      font-size: 12px;
+    }
+
+    .game-button:hover {
+      background: rgba(0, 0, 255, 0.6);
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -126,15 +144,13 @@
 
   <div class="content">
     <div class="content-box">
-      <h1>Creayun</h1> 
+      <h1 style="font-size:20px;">Creayun</h1> 
       <p>By Laith!</p>
-      <p>⚠️ This is in its BETA Stage ⚠️</p>
-      <p>Please Report Bugs/Issues/Suggestions to the Discord server: 
-        <a href="https://discord.com/invite/CJMgkBZ284" class="game-button">Discord</a>
-      </p>
-      <p>
-        <a href="javascript:void(0);" class="game-button" onclick="showDiscord()">Go to Discord Page</a>
-      </p>
+      <p>⚠️ BETA Stage ⚠️</p>
+      <p>Report Bugs/Suggestions to Discord:</p>
+      <a href="https://discord.com/invite/CJMgkBZ284" class="game-button" target="_blank">Discord</a>
+      <br>
+      <a href="javascript:void(0);" class="game-button" onclick="showDiscord()">Discord Page</a>
     </div>
   </div>
 
