@@ -76,6 +76,22 @@
       background: rgba(0, 0, 0, 0.8);
       margin-top: auto;
     }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      width: 40px;
+      height: auto;
+      transition: all 0.3s ease;
+    }
+
+    .logo-img:hover {
+      filter: drop-shadow(0 0 8px #00f);
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
@@ -118,9 +134,9 @@
   </div>
 
   <footer class="footer">
-    <div class="logo">
-      <img src="favicon.ico" alt="Creayun Logo" style="width: 50px; height: auto;">
-    </div>
+    <a href="https://youtube.com/@skulldagrait" target="_blank" class="logo-link">
+      <img src="favicon.ico" alt="Creayun Logo" class="logo-img">
+    </a>
     <a class="corner-button" id="credits-button" onclick="alert('Credits go here!')">Credits</a>
   </footer>
 
