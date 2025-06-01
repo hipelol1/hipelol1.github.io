@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <title>Creayun</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 10px 0;
+      z-index: 1000;
+    }
+
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .navbar li {
+      margin: 0 15px;
+    }
+
+    .navbar a, .corner-button {
+      display: inline-block;
+      padding: 10px 15px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .navbar a:hover, .corner-button:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 100px;
+      padding-bottom: 20px;
+    }
+
+    .content-box {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 10px;
+      max-width: 250px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      font-size: 14px;
+    }
+
+    #discord-widget {
+      width: 100vw;
+      height: 100vh;
+      display: none;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.8);
+      margin-top: auto;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      width: 25px;
+      height: auto;
+      transition: all 0.3s ease;
+    }
+
+    .logo-img:hover {
+      filter: drop-shadow(0 0 8px #00f);
+      transform: scale(1.1);
+    }
+
+    .game-button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: rgba(0, 0, 255, 0.4);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s;
+      font-size: 12px;
+    }
+
+    .game-button:hover {
+      background: rgba(0, 0, 255, 0.6);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <iframe src="about:blank" class="contentFrame" style="width: 100%; height: 100%; border: none; position: absolute; left: 0; top: 0; display: none;" onload="this.contentWindow.focus()"></iframe>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a data-href="/games">Gxmes</a></li>
+        <li><a data-href="/apps">Apps - Coming soon</a></li>
+        <li><a data-href="/prxy">Prxy</a></li>
+        <li><a data-href="/tools">Tools</a></li>
+        <li><a data-href="/misc">Download Games</a></li>
+        <li><a href="https://github.com/hipelol1/hipelol1.github.io/">Github</a></li>
+        <li><a data-href="/settings">Settings</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="content">
+    <div class="content-box">
+      <h1 style="font-size:20px;">Creayun</h1> 
+      <p>By skulldagrait</p>
+      <h1 style="font-size:35px;">⚠️ We are still working on this website ⚠️</h1>
+      <p>Report Bugs/Suggestions to Discord:</p>
+      <a href="https://discord.com/invite/CJMgkBZ284" class="game-button" target="_blank">Discord</a>
+      <br>
+      <a href="javascript:void(0);" class="game-button" onclick="showDiscord()">Discord Unblocked</a>
+      <a href="https://youtube.com/@skulldagrait" class="game-button">Youtube Channel</a>
+    </div>
+  </div>
+
+  <div id="discord-widget">
+    <widgetbot
+      server="1210078870326345738"
+      channel="1359683653109547149"
+      width="100%"
+      height="100%"
+    ></widgetbot>
+  </div>
+</a>
+  <a <a href="https://astralmc-main.github.io/" class="game-button">Astral MC (Mellowvaded's website)</a>
+ 
+    </a>
+    <a class="corner-button" id="credits-button" onclick="alert('Press okay on this alert to see credits!')">Credits</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+  <script>
+    function showDiscord() {
+      document.querySelector('.content').style.display = 'none';
+      document.getElementById('discord-widget').style.display = 'block';
+    }
+
+    document.getElementById("credits-button").addEventListener("click", function() {
+      document.querySelector('.contentFrame').src = "/credits.html";
+      document.querySelector('.contentFrame').style.display = 'block';
+      document.querySelector('.content').style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
