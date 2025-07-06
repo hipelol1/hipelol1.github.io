@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shell Lobby Notifier</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background: #111;
+      color: white;
+    }
+    button {
+      padding: 20px 40px;
+      font-size: 20px;
+      border: none;
+      background: limegreen;
+      color: black;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:active {
+      background: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>Shell Lobby Notifier</h1>
+  <button onclick="sendPing()">I'm in a Shell lobby</button>
+
+  <script>
+    function sendPing() {
+      fetch('https://discord.com/api/webhooks/1391514683801866371/DdS7imvHU0jpXkRG7ueFNni7_WW-oaZmBOzWGNEaHp8-hY8W7Cv1W3a6cfNgl5SBsCNR', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content: '🟢 I just joined a Shell Shockers lobby!' })
+      }).then(() => {
+        alert("Notification sent to Discord!");
+      }).catch(() => {
+        alert("Failed to send. Check your webhook URL.");
+      });
+    }
+  </script>
+</body>
+</html>
