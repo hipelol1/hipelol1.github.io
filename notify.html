@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Shell Lobby Notifier</title>
+  <title>Shell Lobby Auto Notifier</title>
   <style>
     body {
       font-family: sans-serif;
@@ -10,36 +10,42 @@
       background: #111;
       color: white;
     }
-    button {
-      padding: 20px 40px;
-      font-size: 20px;
-      border: none;
-      background: limegreen;
-      color: black;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    button:active {
-      background: green;
+    #status {
+      margin-top: 20px;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
-  <h1>Shell Lobby Notifier</h1>
-  <button onclick="sendPing()">I'm in a Shell lobby</button>
-
+  <h1>Shell Lobby Auto Notifier</h1>
+  <p>This page will automatically notify Discord when you join a lobby.</p>
+  <div id="status">Waiting for lobby join...</div>
   <script>
-    function sendPing() {
-      fetch('https://discord.com/api/webhooks/1391514683801866371/DdS7imvHU0jpXkRG7ueFNni7_WW-oaZmBOzWGNEaHp8-hY8W7Cv1W3a6cfNgl5SBsCNR', {
+    const webhookURL = 'https://discord.com/api/webhooks/1391514683801866371/DdS7imvHU0jpXkRG7ueFNni7_WW-oaZmBOzWGNEaHp8-hY8W7Cv1W3a6cfNgl5SBsCNR';
+    const username = '<@1357134189790625852>';
+    let notifiedLobby = null;
+    function sendDiscordMessage(content) {
+      fetch(webhookURL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content: '🟢 I just joined a Shell Shockers lobby!' })
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({content})
       }).then(() => {
-        alert("Notification sent to Discord!");
+        document.getElementById('status').innerText = 'Notification sent: ' + content;
       }).catch(() => {
-        alert("Failed to send. Check your webhook URL.");
+        document.getElementById('status').innerText = 'Failed to send notification.';
       });
     }
+    function checkLobby() {
+      const hash = window.location.hash;
+      if (hash.startsWith('#wrap-') && hash !== notifiedLobby) {
+        notifiedLobby = hash;
+        const lobbyURL = 'https://shellshock.io/' + hash;
+        const message = `${username} is in the lobby: ${lobbyURL}`;
+        sendDiscordMessage(message);
+      }
+    }
+    setInterval(checkLobby, 2000);
   </script>
 </body>
 </html>
+
