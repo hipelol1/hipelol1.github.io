@@ -17,6 +17,7 @@
       display: flex;
       gap: 10px;
       align-items: center;
+      z-index: 10000;
     }
     #lobbyInput {
       flex-grow: 1;
@@ -39,6 +40,25 @@
       border: none;
       width: 100%;
     }
+    #discordButton {
+      position: fixed;
+      bottom: 80px;
+      left: 20px;
+      background-color: #5865F2;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      z-index: 10001;
+      user-select: none;
+    }
+    #discordButton:hover {
+      background-color: #4752c4;
+    }
   </style>
 </head>
 <body>
@@ -49,6 +69,10 @@
   </div>
 
   <iframe src="https://shellshock.io/" allowfullscreen></iframe>
+
+  <a id="discordButton" href="https://discord.gg/KM8GbKbHxh" target="_blank" rel="noopener noreferrer">
+    Join Discord
+  </a>
 
   <script>
     const webhookURL = 'https://discord.com/api/webhooks/1391514683801866371/DdS7imvHU0jpXkRG7ueFNni7_WW-oaZmBOzWGNEaHp8-hY8W7Cv1W3a6cfNgl5SBsCNR';
